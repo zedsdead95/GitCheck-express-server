@@ -4,6 +4,11 @@ Github Analytics server
 ## Running the app
 
 ### 1. Clone this repo
+
+```sh
+$ git clone https://github.com/heig-vd-tweb/express-server-skeleton.git
+```
+
 ### 2. Add Environment Variables
 Copy the `.env.default` file and rename it to `.env`.
 ```sh
