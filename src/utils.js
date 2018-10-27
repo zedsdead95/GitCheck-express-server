@@ -12,7 +12,7 @@ function getReposLanguagesStats(reposLanguages = []) {
 }
 
 function getData(items = []) {
-  const tab = ['README', 'LICENSE', 'CONTRIBUTING', 'test', 'eslint'];
+  const tab = ['README', 'LICENSE','CONDUCT', 'CONTRIBUTING', 'test', 'eslint'];
   const response = new Set();
   tab.forEach(word => {
     items.forEach(item => {
