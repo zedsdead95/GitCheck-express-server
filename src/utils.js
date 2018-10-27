@@ -1,15 +1,4 @@
-function getReposLanguagesStats(reposLanguages = []) {
-  const stats = {};
-  const countLanguages = o => {
-    Object.keys(o).forEach(key => {
-      const value = o[key];
-      const current = stats[key] || 0;
-      stats[key] = current + value;
-    });
-  };
-  reposLanguages.forEach(countLanguages);
-  return stats;
-}
+
 
 function getData(items = []) {
   const tab = ['README', 'LICENSE','CONDUCT', 'CONTRIBUTING', 'test', 'eslint'];
@@ -28,6 +17,5 @@ function getData(items = []) {
 
 
 module.exports = {
-  getReposLanguagesStats,
   getData,
 };

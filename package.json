@@ -19,9 +19,11 @@
     "nodemon": "^1.18.4"
   },
   "dependencies": {
+    "assert": "^1.4.1",
     "cors": "^2.8.4",
+    "dotenv": "^6.0.0",
     "express": "^4.16.3",
-    "node-fetch": "^2.2.0",
-    "dotenv": "^6.0.0"
+    "mongodb": "^2.2.36",
+    "node-fetch": "^2.2.0"
   }
 }
