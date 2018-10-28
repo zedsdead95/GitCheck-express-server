@@ -58,7 +58,17 @@ function findRepoInfoFromDatabase(username,reponame){
         
         // Find a document
         //collection.find({'username': username,"reponame" :reponame }).toArray().then((val) => {console.log(val)});  
-        collection.find({'username': username,"reponame" :reponame },{ _id:0,"username" : 0,"reponame" :0}).toArray().then((val) => {console.log(val)});  
+        collection.find({'username': username,"reponame" :reponame },{ _id:0,"username" : 0,"reponame" :0}).toArray().
+        then((val) => {
+            let res = new Set();
+            res.add(val[0].readme);
+            res.add(val[0].license);
+            res.add(val[0].conduct);
+            res.add(val[0].contributing);
+            res.add(val[0].eslint);
+            res.add(val[0].test);
+            console.log(Array.from(res));
+        });
 
       db.close();
     });
@@ -68,5 +78,21 @@ module.exports = {
   connectToDatabase,
   findRepoInfoFromDatabase,
   insertRepoInfoToDatabase,
+};
+
+var _db;
+
+module.exports = {
+
+  connectToServer: function( callback ) {
+    MongoClient.connect( "mongodb://localhost:27017/gitcheck", function( err, db ) {
+      _db = db;
+      return callback( err );
+    } );
+  },
+
+  getDb: function() {
+    return _db;
+  }
 };
 
